@@ -1,14 +1,16 @@
 import { useState } from 'react'
 
-import './App.css'
+
+
 import {About, Footer, Header, Work, Skills, Testimonial} from './containers'
 import { Navbar } from './components'
+import "./App.scss"
 
 function App() {
 
 
   return (
-    <div>
+    <div className='app app_container'>
       <Navbar/>
       <Header/> 
       <About/>
