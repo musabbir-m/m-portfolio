@@ -1,15 +1,22 @@
 import { useState } from 'react'
 
 import './App.css'
+import {About, Footer, Header, Work, Skills, Testimonial} from './containers'
+import { Navbar } from './components'
 
 function App() {
 
 
   return (
-    <>
-     <h1>Portfolio</h1>
-       
-    </>
+    <div>
+      <Navbar/>
+      <Header/> 
+      <About/>
+      <Work/>
+      <Skills/> 
+      <Testimonial/> 
+      <Footer/> 
+    </div>
   )
 }
 
