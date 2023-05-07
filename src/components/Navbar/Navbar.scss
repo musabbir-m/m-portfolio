@@ -17,8 +17,7 @@
     justify-content: flex-start;
     align-items: center;
     img{
-        width: 90px;
-        height: 20px;
+       width: 40%;
         @media screen and (min-width:2000px){
             width: 180px;
             height: 40px;
@@ -119,6 +118,7 @@
             height: 35px;
             color: var(--secondary-color);
             margin: 0.5rem 1rem;
+            
         }
         ul{
             list-style: none;
