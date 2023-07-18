@@ -15,7 +15,6 @@ import { urlFor, client} from '../../client'
 const About = () => {
 
   const [abouts, setAbouts]= useState([])
-  console.log(abouts?.length);
 
   useEffect(()=>{
      const query= `*[_type == "abouts"]`
@@ -55,4 +54,4 @@ const About = () => {
   )
 }
 
-export default AppWrap (About, 'about')
+export default AppWrap(About, 'about')
