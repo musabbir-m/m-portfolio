@@ -15,7 +15,7 @@ import { urlFor, client} from '../../client'
 const About = () => {
 
   const [abouts, setAbouts]= useState([])
-
+   console.log(abouts, "aboutsssss")
   useEffect(()=>{
      const query= `*[_type == "abouts"]`
 
