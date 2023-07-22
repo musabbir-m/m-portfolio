@@ -35,7 +35,7 @@ console.log(works, 'helloooo')
    </h2>
 
    <div className="app__work-filter">
-    {['Web App', 'React JS', 'Mobile App', 'UI/UX', 'All'].map((item,index)=>{
+    {['Web App', 'React JS', 'Mobile App', 'UI/UX', 'All'].map((item,index)=>(
       <div
       key={index}
       onClick={()=>handleWorkFilter(item)}
@@ -43,7 +43,7 @@ console.log(works, 'helloooo')
       >
         {item}
       </div>
-    })}
+    ))}
    </div>
 
    <motion.div
