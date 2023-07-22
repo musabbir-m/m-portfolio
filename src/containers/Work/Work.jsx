@@ -9,7 +9,7 @@ import './Work.scss'
 const Work = () => {  
 
   const [activeFilter, setActiveFilter]= useState('All')
-  const [animateCard, setAnimateCard] = useState({y:0})
+  const [animateCard, setAnimateCard] = useState({y:0, opacity:1})
   const [works, setWorks] = useState([])
   const [filterWork, setFilterWork] = useState([])
 console.log(works, 'helloooo')
@@ -24,14 +24,25 @@ console.log(works, 'helloooo')
     }, []
   )
 
-  const handleWorkFilter =(item)=>{
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
 
-  }
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+
+      if (item === 'All') {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
+  };
 
   return (
     <>
     <h2 className="head-text">
-    My Creative <span>Portfolio</span>
+    My <span>Projects</span>
    </h2>
 
    <div className="app__work-filter">
