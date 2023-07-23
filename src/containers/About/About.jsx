@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import './About.scss'
 import { motion } from 'framer-motion'
 
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap, CombinedWrap } from '../../wrapper'
 
 import { urlFor, client} from '../../client'
 
@@ -54,4 +54,11 @@ const About = () => {
   )
 }
 
-export default AppWrap(About, 'about')
+// export default AppWrap(
+//   MotionWrap(About, 'app__about'),
+//   'about',
+//   'app__whitebg',
+// );
+
+
+export default CombinedWrap(About, 'about', 'app__whitebg');
