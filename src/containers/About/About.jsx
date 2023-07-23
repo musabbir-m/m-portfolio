@@ -28,8 +28,8 @@ const About = () => {
    <>
    
    <h2 className="head-text">
-    I know that <span>Great Apps</span> <br />
-    Means <span> Great Business</span>
+    I am <span>passionate about</span> <br />
+    creating <span> unique experience</span>
    </h2>
 
    <div className="app__profiles">
