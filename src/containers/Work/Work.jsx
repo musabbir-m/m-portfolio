@@ -119,7 +119,7 @@ console.log(works, 'helloooo')
 }
 
 export default AppWrap(
-  MotionWrap(Work, 'app__work'),
+  MotionWrap(Work, 'app__works'),
   'work',
   'app__primarybg',
 );
