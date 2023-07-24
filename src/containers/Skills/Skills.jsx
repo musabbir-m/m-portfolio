@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {motion} from 'framer-motion'
 import {Tooltip} from "react-tooltip"
 
-import {AppWrap, MotionWrap} from '../../wrapper'
+import {AppWrap, MotionWrap,CombinedWrap} from '../../wrapper'
 import {urlFor, client} from '../../client'
 import './Skills.scss'
 
@@ -33,7 +33,7 @@ const Skills = () => {
         {skills.map((skill)=>(
           <motion.div key={skill.name}
           whileInView={{opacity:[0,1]}}
-          transition={{duration:0.5}}
+          transition={{duration:0.7}}
           className='app__skills-item app__flex'
           >
 
@@ -94,8 +94,10 @@ const Skills = () => {
 
 // export default AppWrap(Skills, 'skills')
 
-export default AppWrap(
-  MotionWrap(Skills, 'app__skills'),
-  'skills',
-  'app__whitebg',
-);
+// export default AppWrap(
+//   MotionWrap(Skills, 'app__skills'),
+//   'skills',
+//   'app__whitebg',
+// );
+
+export default CombinedWrap(Skills, "skills", "app__whitebg", "app__skills")
