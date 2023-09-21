@@ -12,14 +12,24 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({y:0, opacity:1})
   const [works, setWorks] = useState([])
   const [filterWork, setFilterWork] = useState([])
-console.log(works, 'helloooo')
+  console.log(filterWork, 'filterworks')
+  console.log(works, 'works')
   useEffect(
     ()=>{
       const query= '*[_type=="works"]'
       client.fetch(query)
       .then(data=>{
-        setWorks(data)
-        setFilterWork(data)
+        console.log(data)
+        const sorted= data.sort((a, b) => {
+          const titleA = a.title.toLowerCase();
+          const titleB = b.title.toLowerCase();
+          if (titleA < titleB) return -1;
+          if (titleA > titleB) return 1;
+          return 0; 
+          
+        });
+        setWorks(sorted)
+        setFilterWork(sorted)
       })
     }, []
   )
@@ -45,8 +55,10 @@ console.log(works, 'helloooo')
     My <span>Projects</span>
    </h2>
 
+   
+
    <div className="app__work-filter">
-    {['Web App', 'React JS', 'Mobile App', 'UI/UX', 'All'].map((item,index)=>(
+    {['Web App', 'React JS', 'Mobile App', 'UI/UX', 'All', 'Old'].map((item,index)=>(
       <div
       key={index}
       onClick={()=>handleWorkFilter(item)}
@@ -56,6 +68,8 @@ console.log(works, 'helloooo')
       </div>
     ))}
    </div>
+
+   <p className='p-text'>hover on the images to view links</p>
 
    <motion.div
    animate={animateCard}
@@ -102,7 +116,7 @@ console.log(works, 'helloooo')
 
           <div className="app__work-content app__flex">
 
-            <h4 className="bold-text">{work.title}</h4>
+            <h4 className="bold-text">{work.title.slice(2,100)}</h4>
             <p className="p-text" style={{marginTop:10}}>{work.description}</p>
             <div className='app__work-tag app__flex'>
               <p  className='p-text'>{work.tags[0]}</p>
